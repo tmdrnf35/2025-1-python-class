@@ -48,3 +48,5 @@ john = [order[0][:-2], second[1::3], third[0]]
 del john[2]
 john.extend([order[2][0:1]])
 print(john)
+
+
