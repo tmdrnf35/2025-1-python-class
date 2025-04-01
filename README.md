@@ -45,4 +45,4 @@ import matplotlib.pyplot as plt
 plt.plot(pilist)
 plt.show()
 ```
- - <img src = "img/figure_1.png">
+ - <img src = "img/피규어.png">
