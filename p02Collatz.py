@@ -4,21 +4,67 @@
 # 규칙: n이 짝수 -> n/2
 #      n이 홀수 -> 3 * n + 1
 #  예: 5 -> 16 -> 8 -> 4 -> 2 -> 1 (5단계)
-# n = 97
-def collatz_steps(n):
-    steps = 0
-    while n!= 1:
-        if n % 2 == 1:
-            n = 3 * n + 1
-    else:
-        n = n // 2
-    steps += 1
-    return steps
-max_steps = 0
-for i in range(1, 101):
+n = 97
+# 단계의 갯수를 셀것 - done
+# n을 1부터 99까지 변화하면서, 각각의 단계수를 출력할 것
+# 그중 가장 큰 수를 찾을 것
+# n=97: 118번만에 1로 도달
+# n=73: 115번만에 1로 도달
+
+maxvalue = 0
+maxvaluen = 0
+secondvalue = 0
+secondvaluen = 0
+thirdvalue = 0
+thirdvaluen = 0
+
+for n in range(1, 100):
+    i = n
+    ncount = 0
+
+    while i != 1:
+        if i % 2 == 1:
+            i = 3 * i + 1
+        else:
+            i = i // 2
+        ncount = ncount + 1
+
+    print(f'{ncount}')
+
+    if maxvalue < ncount:
+
+        thirdvalue = secondvalue
+        thirdvaluen = secondvaluen
+
+        secondvalue = maxvalue
+        secondvaluen = maxvaluen
 
 
+        maxvalue = ncount
+        maxvaluen = n
+
+    elif secondvalue < ncount:
+
+        secondvalue = ncount
+        secondvaluen = n
+
+    elif thirdvalue < ncount:
+        thirdvalue = ncount
+        thirdvaluen = n
+
+print(f'{maxvalue=}, {maxvaluen=}')
+print(f'{secondvalue=}, {secondvaluen=}')
+print(f'{thirdvalue=}, {thirdvaluen=}')
 
 
-
-
+# def collatz_steps(n):
+#     steps = 0
+#     while n!= 1:
+#         if n % 2 == 1:
+#             n = 3 * n + 1
+#     else:
+#         n = n // 2
+#     steps += 1
+#     return steps
+# max_steps = 0
+# for i in range(1, 101):
