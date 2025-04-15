@@ -28,14 +28,16 @@ for n in range(1, MAXNUM):
 
 # print(ncountl)
 # print(statistics.mean(ncountl))
-
-
+nmax = 0
+unique_sorted = sorted(set(ncountl), reverse=True)
 # 최대값, 평균, 중앙값, 표준편차, 최빈값,
 
-# 평균
-print(f'최대값 = {max(ncountl):.5f}')
+print(f'최대값 = {max(ncountl):}')
+print(f'1등 숫자 = {ncountl.index(unique_sorted[0]) + 1}')
+print(f'2등 숫자 = {ncountl.index(unique_sorted[1]) + 1}')
+print(f'3등 숫자 = {ncountl.index(unique_sorted[2]) + 1}')
 print(f'평균 = {statistics.mean(ncountl):.5f}')
-print(f'중앙값 = {statistics.median(ncountl):.5f}')
+print(f'중앙값 = {statistics.median(ncountl):}')
 # print(f'최빈값 = {statistics.mode(ncountl):.5f}')
 print(f'표준편차 = {statistics.stdev(ncountl):.5f}')
 
@@ -52,11 +54,14 @@ for n in range(1, MAXNUM):
     ncount = collatz(n)
     ncounta[n-1] = ncount
 
-
+top3 = np.argsort(ncounta)[-3:][::-1]
 
 # # 최대값, 평균, 중앙값, 표준편차, 최빈값,
 
 print(f'최대값 = {np.max(ncounta):.5f}')
+print(f'1등: 숫자 = {top3[0] + 1}')
+print(f'2등: 숫자 = {top3[1] + 1}')
+print(f'3등: 숫자 = {top3[2] + 1}')
 print(f'평균 = {np.mean(ncounta):.5f}')
 print(f'중앙값 = {np.median(ncounta):.5f}')
 print(f'표준편차 = {np.std(ncounta):.5f}')

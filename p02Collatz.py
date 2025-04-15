@@ -4,15 +4,15 @@
 # 규칙: n이 짝수 -> n/2
 #      n이 홀수 -> 3 * n + 1
 #  예: 5 -> 16 -> 8 -> 4 -> 2 -> 1 (5단계)
-n = 97
+n = 9
 # 단계의 갯수를 셀것 - done
 # n을 1부터 99까지 변화하면서, 각각의 단계수를 출력할 것
 # 그중 가장 큰 수를 찾을 것
 # n=97: 118번만에 1로 도달
 # n=73: 115번만에 1로 도달
 
-maxvalue = 0
-maxvaluen = 0
+maxvalue = -100
+maxvaluen = 100
 secondvalue = 0
 secondvaluen = 0
 thirdvalue = 0
